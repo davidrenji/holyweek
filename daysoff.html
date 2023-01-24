@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Would you like to have more days off?</title>
+        <style>
+            .button {
+                width: 80px;
+                height: 30px;
+                margin: 20px;
+                border-radius: 5px;
+                font-size: 16px;
+                font-family: monospace;
+                background-color: #0e2f5a;
+
+                color: white;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .button:hover {
+                background-color: #194880;
+            }
+            body {
+                background: linear-gradient(to bottom, #0e2f5a, #194880);
+                color: white;
+                font-family: monospace;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            #thanks {
+                color: white;
+                font-size: 20px;
+                font-family: monospace;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Would you like to have more days off?</h1>
+        <div>
+            <button id="no-button" class="button" onclick="displayThanks()">No</button>
+            <button id="yes-button" class="button">Yes</button>
+        </div>
+        <p id="thanks" style="display: none">Thank you for your answer, go back to work now.</p>
+
+        <script>
+            function randomPosition() {
+                var x = Math.floor(Math.random() * window.innerWidth) - 50;
+                var y = Math.floor(Math.random() * window.innerHeight) - 50;
+                document.getElementById('yes-button').style.position = 'absolute';
+                document.getElementById('yes-button').style.left = x + 'px';
+                document.getElementById('yes-button').style.top = y + 'px';
+            }
+            function displayThanks() {
+                document.getElementById('thanks').style.display = 'block';
+            }
+            document.getElementById('yes-button').onmouseover = randomPosition;
+        </script>
+    </body>
+</html>
