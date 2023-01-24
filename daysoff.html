@@ -49,6 +49,12 @@
         <p id="thanks" style="display: none">Thank you for your answer, go back to work now.</p>
 
         <script>
+            document.addEventListener('keydown', function (e) {
+                if (e.keyCode === 9) {
+                    e.preventDefault();
+                }
+            });
+
             function randomPosition() {
                 var x = Math.floor(Math.random() * window.innerWidth) - 50;
                 var y = Math.floor(Math.random() * window.innerHeight) - 50;
